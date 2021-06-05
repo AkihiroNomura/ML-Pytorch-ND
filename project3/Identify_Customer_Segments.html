@@ -15013,7 +15013,8 @@ Length: 85, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Discussion-1.1.2:-Assess-Missing-Data-in-Each-Column">Discussion 1.1.2: Assess Missing Data in Each Column<a class="anchor-link" href="#Discussion-1.1.2:-Assess-Missing-Data-in-Each-Column">&#182;</a></h4><p>(Double click this cell and replace this text with your own text, reporting your observations regarding the amount of missing data in each column. Are there any patterns in missing values? Which columns were removed from the dataset?)</p>
+<h4 id="Discussion-1.1.2:-Assess-Missing-Data-in-Each-Column">Discussion 1.1.2: Assess Missing Data in Each Column<a class="anchor-link" href="#Discussion-1.1.2:-Assess-Missing-Data-in-Each-Column">&#182;</a></h4><p>From the graphs, you can see that this dataset contains a very large number of missing values. Since the following columns contain more than 200000 missing values, I removed them.</p>
+<p><code>['TITEL_KZ', 'AGER_TYP', 'KK_KUNDENTYP', 'KBA05_BAUMAX', 'GEBURTSJAHR',　'ALTER_HH']</code></p>
 
 </div>
 </div>
@@ -15523,7 +15524,7 @@ Length: 891221, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Discussion-1.1.3:-Assess-Missing-Data-in-Each-Row">Discussion 1.1.3: Assess Missing Data in Each Row<a class="anchor-link" href="#Discussion-1.1.3:-Assess-Missing-Data-in-Each-Row">&#182;</a></h4><p>(Double-click this cell and replace this text with your own text, reporting your observations regarding missing data in rows. Are the data with lots of missing values are qualitatively different from data with few or no missing values?)</p>
+<h4 id="Discussion-1.1.3:-Assess-Missing-Data-in-Each-Row">Discussion 1.1.3: Assess Missing Data in Each Row<a class="anchor-link" href="#Discussion-1.1.3:-Assess-Missing-Data-in-Each-Row">&#182;</a></h4><p>According to the above graphs, there is no no significant difference in the data for <code>GREEN_AVANTGARDE</code>. However, you can see big differcences in the data related to finance.</p>
 
 </div>
 </div>
@@ -15990,7 +15991,7 @@ Name: OST_WEST_KZ, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Discussion-1.2.1:-Re-Encode-Categorical-Features">Discussion 1.2.1: Re-Encode Categorical Features<a class="anchor-link" href="#Discussion-1.2.1:-Re-Encode-Categorical-Features">&#182;</a></h4><p>(Double-click this cell and replace this text with your own text, reporting your findings and decisions regarding categorical features. Which ones did you keep, which did you drop, and what engineering steps did you perform?)</p>
+<h4 id="Discussion-1.2.1:-Re-Encode-Categorical-Features">Discussion 1.2.1: Re-Encode Categorical Features<a class="anchor-link" href="#Discussion-1.2.1:-Re-Encode-Categorical-Features">&#182;</a></h4><p>First of all, I found non-numeric data in <code>OST_WEST_KZ</code> and encodeed it as numeric. Then, multilevel attributes were encoded using one-hot encoding (get_dummies). I did not delete any data.</p>
 
 </div>
 </div>
@@ -16402,7 +16403,11 @@ Name: CAMEO_INTL_2015, dtype: int64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Discussion-1.2.2:-Engineer-Mixed-Type-Features">Discussion 1.2.2: Engineer Mixed-Type Features<a class="anchor-link" href="#Discussion-1.2.2:-Engineer-Mixed-Type-Features">&#182;</a></h4><p>(Double-click this cell and replace this text with your own text, reporting your findings and decisions regarding mixed-value features. Which ones did you keep, which did you drop, and what engineering steps did you perform?)</p>
+<h4 id="Discussion-1.2.2:-Engineer-Mixed-Type-Features">Discussion 1.2.2: Engineer Mixed-Type Features<a class="anchor-link" href="#Discussion-1.2.2:-Engineer-Mixed-Type-Features">&#182;</a></h4><p>I engineered 2 mixed-type features, <code>PRAEGENDE_JUGENDJAHRE</code> and <code>CAMEO_INTL_2015</code>, like below.</p>
+<ul>
+<li><code>PRAEGENDE_JUGENDJAHRE</code>: <code>DECADE</code> and <code>MOVEMENT</code></li>
+<li><code>CAMEO_INTL_2015</code>: <code>WEALTH</code> and <code>LIFE_STAGE</code></li>
+</ul>
 
 </div>
 </div>
@@ -17088,7 +17093,7 @@ Done!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Discussion-2.1:-Apply-Feature-Scaling">Discussion 2.1: Apply Feature Scaling<a class="anchor-link" href="#Discussion-2.1:-Apply-Feature-Scaling">&#182;</a></h3><p>(Double-click this cell and replace this text with your own text, reporting your decisions regarding feature scaling.)</p>
+<h3 id="Discussion-2.1:-Apply-Feature-Scaling">Discussion 2.1: Apply Feature Scaling<a class="anchor-link" href="#Discussion-2.1:-Apply-Feature-Scaling">&#182;</a></h3><p>I used imputer in order to clean all NaN values. Then I scaled the data by StandardScaler.</p>
 
 </div>
 </div>
@@ -17299,7 +17304,7 @@ Done!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Discussion-2.2:-Perform-Dimensionality-Reduction">Discussion 2.2: Perform Dimensionality Reduction<a class="anchor-link" href="#Discussion-2.2:-Perform-Dimensionality-Reduction">&#182;</a></h3><p>(Double-click this cell and replace this text with your own text, reporting your findings and decisions regarding dimensionality reduction. How many principal components / transformed features are you retaining for the next step of the analysis?)</p>
+<h3 id="Discussion-2.2:-Perform-Dimensionality-Reduction">Discussion 2.2: Perform Dimensionality Reduction<a class="anchor-link" href="#Discussion-2.2:-Perform-Dimensionality-Reduction">&#182;</a></h3><p>I retained 95 components the next step of the analysis, because it was capturing more than 85% of the variance.</p>
 
 </div>
 </div>
@@ -17527,7 +17532,7 @@ Name: 2, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Discussion-2.3:-Interpret-Principal-Components">Discussion 2.3: Interpret Principal Components<a class="anchor-link" href="#Discussion-2.3:-Interpret-Principal-Components">&#182;</a></h3><p>(Double-click this cell and replace this text with your own text, reporting your observations from detailed investigation of the first few principal components generated. Can we interpret positive and negative values from them in a meaningful way?)</p>
+<h3 id="Discussion-2.3:-Interpret-Principal-Components">Discussion 2.3: Interpret Principal Components<a class="anchor-link" href="#Discussion-2.3:-Interpret-Principal-Components">&#182;</a></h3><p>According first principal component, you can see that <code>LP_STATUS_GROB</code> (Social status), <code>HH_EINKOMMEN_SCORE</code> (Estimated household net income) and <code>WEALTH</code> have a positive correlation. I think it indicates that people become wealthier as they gain social status and each household's net income increases. Also, <code>FINANZ_MINIMALIST</code> (Financial typology, low financial interest) is negatively correlated with these three components. So, this suggests that this feature says something about wealth.</p>
 
 </div>
 </div>
@@ -17650,7 +17655,7 @@ Name: 2, dtype: float64</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Discussion-3.1:-Apply-Clustering-to-General-Population">Discussion 3.1: Apply Clustering to General Population<a class="anchor-link" href="#Discussion-3.1:-Apply-Clustering-to-General-Population">&#182;</a></h3><p>(Double-click this cell and replace this text with your own text, reporting your findings and decisions regarding clustering. Into how many clusters have you decided to segment the population?)</p>
+<h3 id="Discussion-3.1:-Apply-Clustering-to-General-Population">Discussion 3.1: Apply Clustering to General Population<a class="anchor-link" href="#Discussion-3.1:-Apply-Clustering-to-General-Population">&#182;</a></h3><p>I decided to use 19 clusters based on the above plot.　It took almost an hour to plot this graph, so I decided not to investigate further. However if I had more time, I could have investigated more than 20 clusters.</p>
 
 </div>
 </div>
@@ -18703,10 +18708,396 @@ Length: 192, dtype: float64</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[146]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">overrepresented_cluster</span><span class="p">,</span> <span class="n">underrepresented_cluster</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/opt/conda/lib/python3.6/site-packages/ipykernel_launcher.py:1: FutureWarning: Sorting because non-concatenation axis is not aligned. A future version
+of pandas will change to not sort by default.
+
+To accept the future behavior, pass &#39;sort=False&#39;.
+
+To retain the current behavior and silence the warning, pass &#39;sort=True&#39;.
+
+  &#34;&#34;&#34;Entry point for launching an IPython kernel.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[146]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ALTERSKATEGORIE_GROB</th>
+      <td>3.754610</td>
+      <td>2.718925</td>
+    </tr>
+    <tr>
+      <th>ANREDE_KZ</th>
+      <td>0.881966</td>
+      <td>1.768112</td>
+    </tr>
+    <tr>
+      <th>ANZ_HAUSHALTE_AKTIV</th>
+      <td>-0.839424</td>
+      <td>11.832622</td>
+    </tr>
+    <tr>
+      <th>ANZ_HH_TITEL</th>
+      <td>-0.006477</td>
+      <td>0.088454</td>
+    </tr>
+    <tr>
+      <th>ANZ_PERSONEN</th>
+      <td>2.905599</td>
+      <td>1.960188</td>
+    </tr>
+    <tr>
+      <th>ANZ_TITEL</th>
+      <td>0.005026</td>
+      <td>0.012850</td>
+    </tr>
+    <tr>
+      <th>ARBEIT</th>
+      <td>2.618170</td>
+      <td>3.361978</td>
+    </tr>
+    <tr>
+      <th>BALLRAUM</th>
+      <td>4.315206</td>
+      <td>3.491682</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_1</th>
+      <td>0.065194</td>
+      <td>0.179983</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_2</th>
+      <td>0.339854</td>
+      <td>0.098330</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_3</th>
+      <td>0.315999</td>
+      <td>0.019945</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_4</th>
+      <td>0.201604</td>
+      <td>0.044418</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_5</th>
+      <td>0.118832</td>
+      <td>-0.012784</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_6</th>
+      <td>0.119446</td>
+      <td>0.110543</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_7</th>
+      <td>0.048178</td>
+      <td>0.061328</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_8</th>
+      <td>0.037335</td>
+      <td>0.088299</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEUG_2015_9</th>
+      <td>-0.027698</td>
+      <td>0.154137</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_1A</th>
+      <td>-0.029005</td>
+      <td>0.125293</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_1B</th>
+      <td>0.020111</td>
+      <td>-0.000573</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_1C</th>
+      <td>0.026566</td>
+      <td>0.007237</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_1D</th>
+      <td>0.062568</td>
+      <td>0.031455</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_1E</th>
+      <td>0.091269</td>
+      <td>0.006911</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_2A</th>
+      <td>0.054135</td>
+      <td>0.016777</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_2B</th>
+      <td>0.054836</td>
+      <td>0.003894</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_2C</th>
+      <td>0.056186</td>
+      <td>0.006025</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_2D</th>
+      <td>0.152518</td>
+      <td>0.035672</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_3A</th>
+      <td>0.062448</td>
+      <td>-0.006722</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_3B</th>
+      <td>0.018103</td>
+      <td>-0.003079</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_3C</th>
+      <td>0.044914</td>
+      <td>0.030412</td>
+    </tr>
+    <tr>
+      <th>CAMEO_DEU_2015_3D</th>
+      <td>0.070305</td>
+      <td>0.018840</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>RETOURTYP_BK_S</th>
+      <td>4.149519</td>
+      <td>3.144745</td>
+    </tr>
+    <tr>
+      <th>SEMIO_DOM</th>
+      <td>2.837813</td>
+      <td>5.259097</td>
+    </tr>
+    <tr>
+      <th>SEMIO_ERL</th>
+      <td>4.186634</td>
+      <td>4.517021</td>
+    </tr>
+    <tr>
+      <th>SEMIO_FAM</th>
+      <td>4.649963</td>
+      <td>3.820684</td>
+    </tr>
+    <tr>
+      <th>SEMIO_KAEM</th>
+      <td>1.952294</td>
+      <td>5.267560</td>
+    </tr>
+    <tr>
+      <th>SEMIO_KRIT</th>
+      <td>2.361166</td>
+      <td>4.735754</td>
+    </tr>
+    <tr>
+      <th>SEMIO_KULT</th>
+      <td>4.778700</td>
+      <td>3.959593</td>
+    </tr>
+    <tr>
+      <th>SEMIO_LUST</th>
+      <td>6.083994</td>
+      <td>4.551511</td>
+    </tr>
+    <tr>
+      <th>SEMIO_MAT</th>
+      <td>3.495934</td>
+      <td>4.347111</td>
+    </tr>
+    <tr>
+      <th>SEMIO_PFLICHT</th>
+      <td>2.471654</td>
+      <td>4.580455</td>
+    </tr>
+    <tr>
+      <th>SEMIO_RAT</th>
+      <td>1.974165</td>
+      <td>4.691750</td>
+    </tr>
+    <tr>
+      <th>SEMIO_REL</th>
+      <td>3.193216</td>
+      <td>4.360277</td>
+    </tr>
+    <tr>
+      <th>SEMIO_SOZ</th>
+      <td>5.308032</td>
+      <td>3.628216</td>
+    </tr>
+    <tr>
+      <th>SEMIO_TRADV</th>
+      <td>2.600294</td>
+      <td>4.234511</td>
+    </tr>
+    <tr>
+      <th>SEMIO_VERT</th>
+      <td>7.014178</td>
+      <td>3.370154</td>
+    </tr>
+    <tr>
+      <th>SHOPPER_TYP_0.0</th>
+      <td>0.379180</td>
+      <td>0.137830</td>
+    </tr>
+    <tr>
+      <th>SHOPPER_TYP_1.0</th>
+      <td>0.277926</td>
+      <td>0.146650</td>
+    </tr>
+    <tr>
+      <th>SHOPPER_TYP_2.0</th>
+      <td>0.061228</td>
+      <td>0.325622</td>
+    </tr>
+    <tr>
+      <th>SHOPPER_TYP_3.0</th>
+      <td>0.343594</td>
+      <td>0.219866</td>
+    </tr>
+    <tr>
+      <th>SOHO_KZ</th>
+      <td>0.007143</td>
+      <td>0.010656</td>
+    </tr>
+    <tr>
+      <th>VERS_TYP</th>
+      <td>1.464391</td>
+      <td>1.426141</td>
+    </tr>
+    <tr>
+      <th>WEALTH</th>
+      <td>5.309717</td>
+      <td>2.046962</td>
+    </tr>
+    <tr>
+      <th>WOHNDAUER_2008</th>
+      <td>9.016443</td>
+      <td>8.227973</td>
+    </tr>
+    <tr>
+      <th>W_KEIT_KIND_HH</th>
+      <td>4.278419</td>
+      <td>4.317498</td>
+    </tr>
+    <tr>
+      <th>ZABEOTYP_1.0</th>
+      <td>0.934425</td>
+      <td>0.168501</td>
+    </tr>
+    <tr>
+      <th>ZABEOTYP_2.0</th>
+      <td>0.087619</td>
+      <td>0.006652</td>
+    </tr>
+    <tr>
+      <th>ZABEOTYP_3.0</th>
+      <td>0.288388</td>
+      <td>0.178218</td>
+    </tr>
+    <tr>
+      <th>ZABEOTYP_4.0</th>
+      <td>-0.018841</td>
+      <td>0.271797</td>
+    </tr>
+    <tr>
+      <th>ZABEOTYP_5.0</th>
+      <td>-0.022354</td>
+      <td>0.069207</td>
+    </tr>
+    <tr>
+      <th>ZABEOTYP_6.0</th>
+      <td>0.013881</td>
+      <td>0.012608</td>
+    </tr>
+  </tbody>
+</table>
+<p>192 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Discussion-3.3:-Compare-Customer-Data-to-Demographics-Data">Discussion 3.3: Compare Customer Data to Demographics Data<a class="anchor-link" href="#Discussion-3.3:-Compare-Customer-Data-to-Demographics-Data">&#182;</a></h3><p>(Double-click this cell and replace this text with your own text, reporting findings and conclusions from the clustering analysis. Can we describe segments of the population that are relatively popular with the mail-order company, or relatively unpopular with the company?)</p>
+<h3 id="Discussion-3.3:-Compare-Customer-Data-to-Demographics-Data">Discussion 3.3: Compare Customer Data to Demographics Data<a class="anchor-link" href="#Discussion-3.3:-Compare-Customer-Data-to-Demographics-Data">&#182;</a></h3><p>From the above analysis, we can see that cluster 0 is overrepresented in the customers data compared to general population data. Also, cluster 13 is underrepresented in the customers data. Comparing these clusters, you can find that the customers of the mail-order company have the following tendencies:</p>
+<ul>
+<li>Economically affluent (<code>WEALTH</code>)</li>
+<li>Many adults in the household (<code>ANZ_PERSONEN</code>)</li>
+<li>Live far from urban centers (<code>BALLRAUM</code>)</li>
+</ul>
 
 </div>
 </div>
